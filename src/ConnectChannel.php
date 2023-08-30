@@ -27,7 +27,7 @@ class ConnectChannel
             $message = $notification->toConnect($notifiable);
 
             if (is_string($message)) {
-                $message = new ConnectMessage($to, $message);
+                $message = new ConnectMessage($message);
             }
 
             if (! $message instanceof ConnectMessage) {
