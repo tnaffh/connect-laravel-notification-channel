@@ -5,28 +5,28 @@ namespace Tnaffh\ConnectLaravelNotificationChannel;
 use Exception;
 use Illuminate\Notifications\Events\NotificationFailed;
 use Illuminate\Notifications\Notification;
-use Tnaffh\ConnectSms\ConnectSms;
 use Tnaffh\ConnectLaravelNotificationChannel\Exceptions\CouldNotSendNotification;
+use Tnaffh\ConnectSms\ConnectSms;
 
 class ConnectChannel
 {
     protected ConnectSms $api;
+
     protected $events;
 
-    function __construct(ConnectSms $api){
+    public function __construct(ConnectSms $api)
+    {
         $this->api = $api;
     }
-
-
 
     public function send($notifiable, Notification $notification)
     {
 
-        try{
+        try {
             $to = $this->getTo($notifiable, $notification);
             $message = $notification->toConnect($notifiable);
 
-            if(is_string($message)){
+            if (is_string($message)) {
                 $message = new ConnectMessage($to, $message);
             }
 
@@ -37,7 +37,7 @@ class ConnectChannel
             return $this->api->send(to: $to, message: $message->text
             );
 
-        }catch (Exception $exception) {
+        } catch (Exception $exception) {
             $event = new NotificationFailed(
                 $notifiable,
                 $notification,
@@ -46,7 +46,6 @@ class ConnectChannel
             );
 
             $this->events->dispatch($event);
-
 
             throw $exception;
         }
@@ -66,5 +65,4 @@ class ConnectChannel
 
         throw CouldNotSendNotification::invalidReceiver();
     }
-
 }

@@ -4,7 +4,6 @@ namespace Tnaffh\ConnectLaravelNotificationChannel;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Tnaffh\ConnectLaravelNotificationChannel\Commands\ConnectLaravelNotificationChannelCommand;
 use Tnaffh\ConnectSms\ConnectSms;
 
 class ConnectChannelServiceProvider extends PackageServiceProvider

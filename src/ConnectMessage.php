@@ -8,15 +8,11 @@ class ConnectMessage
 {
     /**
      * The message content.
-     *
-     * @var string
      */
     public string $content = '';
 
     /**
      * Time of sending a message.
-     *
-     * @var DateTimeInterface
      */
     public DateTimeInterface $sendAt;
 
@@ -28,7 +24,6 @@ class ConnectMessage
     /**
      * Create a new message instance.
      *
-     * @param string $content
      * @return static
      */
     public static function create(string $content = '')
@@ -61,5 +56,4 @@ class ConnectMessage
 
         return $this;
     }
-
 }
