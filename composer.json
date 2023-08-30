@@ -74,7 +74,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ConnectChannelServiceProvider"
+                "Tnaffh\\ConnectLaravelNotificationChannel\\ConnectChannelServiceProvider"
             ],
             "aliases": {
                 "ConnectLaravelNotificationChannel": "Tnaffh\\ConnectLaravelNotificationChannel\\Facades\\ConnectLaravelNotificationChannel"
