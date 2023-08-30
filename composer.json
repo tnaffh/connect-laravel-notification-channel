@@ -34,13 +34,7 @@
         "phpstan/phpstan-phpunit": "^1.0",
         "spatie/laravel-ray": "^1.26"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/tnaffh/connect-sms.git",
-            "name": "tnaffh/connect-sms"
-        }
-    ],
+
     "autoload": {
         "psr-4": {
             "Tnaffh\\ConnectLaravelNotificationChannel\\": "src/",
