@@ -34,8 +34,7 @@ class ConnectChannel
                 throw CouldNotSendNotification::invalidMessageObject($message);
             }
 
-            return $this->api->send(to: $to, message: $message->text
-            );
+            return $this->api->send(to: $to, message: $message->content);
 
         } catch (Exception $exception) {
             $event = new NotificationFailed(

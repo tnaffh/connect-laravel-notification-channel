@@ -16,7 +16,7 @@ class ConnectMessage
      */
     public DateTimeInterface $sendAt;
 
-    final public function __construct(string $content = '')
+    final public function __construct(string $content)
     {
         $this->content = $content;
     }
